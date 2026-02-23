@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sales-analysis-pipeline"
+version = "0.1.0"
+description = "Synthetic sales data analysis pipeline using pandas and numpy"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.2,<3.0",
+  "numpy>=1.26,<3.0",
+]
+
+[project.optional-dependencies]
+dashboard = [
+  "matplotlib>=3.8,<4.0",
+  "streamlit>=1.32,<2.0",
+]
+dev = [
+  "pytest>=8.0,<9.0",
+  "ruff>=0.9,<1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

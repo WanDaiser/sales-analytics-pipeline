@@ -1,0 +1,16 @@
+﻿__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+outputs/*.csv
+*.egg-info/
+dist/
+build/
+htmlcov/
+.coverage
+coverage.xml
+
+# Keep directory structure
+!outputs/.gitkeep
+!data/.gitkeep
